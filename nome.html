@@ -1,0 +1,36 @@
+<!--HTML-->
+<h1>Insira seu nome</h1>
+<form onsubmit="return enviarNome()">
+    <label>Nome Completo:</label>
+    <input id="nome" type="text" />
+    <button type="submit">Enviar</button>
+    <p id="mensagem"></p>
+</form>
+<p id="mensagem"></p>
+
+<script>
+    function enviarNome() {
+        //entrada
+        var nome = document.getElementById("nome").value;
+        var paragrafoMensagem = document.getElementById("mensagem");
+
+        //PROCESSAMENTO
+        //PREENCHEU?
+        if (nome == "") {
+            paragrafoMensagem.textContent = "Insira seu nome!";
+            return false;
+        }
+        if (!isNaN(nome)){
+        paragrafoMensagem.textContent = "Preencha apenas letras!";
+        return false;
+        }
+        
+        paragrafoMensagem.textContent = "Olá, " + nome + ".Seja bem-vinda.";
+        return false;
+    }
+
+</script>
+
+
+
+<!--"Olá " + nome + ". Seja bem-vinda!"-->

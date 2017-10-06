@@ -1,0 +1,102 @@
+<!--HTML
+<h1>Calculadora de média</h1>
+
+<form onsubmir="return responder()">
+    <label>Num1</label>
+    <input id="num1" type="text" />
+    <label>Num2</label>
+    <input id="num2" type="text">
+    <button type="submit"> Responder</button>
+</form>
+<p id="mensagem"></p>
+
+<script>
+    function responder() {
+        var num1 = document.getElementById("num1").value;-->
+<!--//  var num1 esta puxando as entradas
+        // var num2 = document.getElementById("num2").value;
+        // var paragrafoMensagem = document.getElementById("mensagem");
+        //chamando paragrafo
+    
+//     if (num1 == "" || num2 == "") {
+//    paragrafoMensagem = "Preencha os campos";
+//    return false;
+//     }
+//     num1 = parseFloat (num1);
+//     num2 = parseFloat (num2);
+
+//     if (isNaN(num1) || isNaN(num2)) {
+//         paragrafoMensagem = "Apenas números";
+       
+//     }
+
+//     var media = (num1,num2);
+    
+//     //Criar variavel antes da função
+//     function compararNumeros (num1, num2) {
+//         var resposta = (num1 > num2);
+//         return resposta;
+//     } 
+    
+
+
+</script>-->
+
+<!-- HTML -->
+<h1>Validação de aprovação</h1>
+<form onsubmit="return verificaAprovacao()">
+    <label>Nota1:</label>
+    <input id="nota1" type="text" />
+
+    <br>
+
+    <label>Nota2:</label>
+    <input id="nota2" type="text" />
+
+
+
+    
+    <br><br>
+
+    <button type="submit">Verificar</button>
+</form>
+<p id="mensagem"></p>
+
+<!-- JAVASCRIPT -->
+<script>
+    function calculaMedia(nota1, nota2) {
+        //  () porque eu quem criei a função
+        // (estou dando as funcoes)
+        var media = (nota1 + nota2) / 2;
+        // (estou mandando executar)
+        return media;
+    }
+    function verificaAprovacao() {
+        var nota1 = document.getElementById("nota1").value;
+        var nota2 = document.getElementById("nota2").value;
+       
+        var paragrafoMensagem = document.getElementById("mensagem");
+        if (nota1 == "" || nota2 == "") {
+            paragrafoMensagem.textContent = "Preencha todos os campos.";
+            return false;
+        }
+        nota1 = parseFloat(nota1);
+        nota2 = parseFloat(nota2);
+       
+        if (isNaN(nota1) || isNaN(nota2)) {
+            paragrafoMensagem.textContent = "Preencha somente números.";
+            return false;
+        }
+        if (nota1 < 0 || nota2 < 0) {
+            paragrafoMensagem.textContent = "Preencha números positivos.";
+            return false;
+        }
+        var media = (nota1 + nota2) / 2;
+        if (media >= 6) {
+            paragrafoMensagem.textContent = "Aprovado. Sua média é: " + media;
+            return false;
+        }
+        paragrafoMensagem.textContent = "Reprovado.Tente novamente.";
+        return false;
+    }
+</script>

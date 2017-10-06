@@ -1,0 +1,42 @@
+<!--HTML-->
+
+<h1>Média</h1>
+<form onsubmit="return verificaNumero()">
+    <label>Digite o número 1</label>
+    <input id="n1" type="text">
+    <label>Digite o número 2</label>
+    <input id="n2" type="text">
+    <label>Digite o número 3</label>
+    <input id="n3" type="text">
+    <button type="submit">Ok</button>
+</form>
+<p id="mensagem"></p>
+
+<!--JAVASCRIPT-->
+
+<script>
+    function verificaNumero() {
+        
+        var n1 = document.getElementById ("n1").value;
+        var n2 = document.getElementById ("n1").value;
+        var n3 = document.getElementById ("n1").value;
+        var paragrafoMensagem = document.getElementById ("mensagem");
+
+        //VERIFICO SE PREENCHEU
+        if (n1 == "" || n2 == "" || n3 == "") {
+            paragrafoMensagem.textContent = "*Preencha todos os campos!";
+            return false;
+        }
+
+        //É NUMERO?
+        n1 = parseFloat(n1);
+        n2 = parseFloat(n2);
+        n3 = parseFloat(n3);
+        if (isNaN(n1) || isNaN(n2) || isNaN(n3)) {
+            paragrafoMensagem.textContent = "Preencha apenas Números!";
+            return false;
+        }
+        
+    }
+
+</script>
